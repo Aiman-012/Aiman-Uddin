@@ -70,7 +70,7 @@ export default function Home() {
              <div className="absolute inset-0 opacity-20 dark:opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
              
              <img 
-               src="/bg.png" 
+               src="/profile.png" 
                alt="Aiman Siam" 
                className="relative z-10 w-full h-full object-contain object-bottom drop-shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
              />
