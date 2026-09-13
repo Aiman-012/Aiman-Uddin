@@ -46,7 +46,7 @@ export default function ProjectDetails() {
       animate={{ opacity: 1 }}
       className="max-w-4xl mx-auto px-6 pt-24 pb-40"
     >
-      <SEO title={project.title} description={project.description} />
+      <SEO title={project.title} description={project.description} name="Aiman Siam" />
       <Link to="/" className="inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors mb-16">
         <ArrowLeft size={16} /> Back to Projects
       </Link>
