@@ -1,0 +1,6 @@
+{
+  "name": "Aiman Siam - Portfolio",
+  "description": "Portfolio website built with React, Vite, and Tailwind CSS. Features scroll animations, a headless CMS data structure, and dark mode.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
