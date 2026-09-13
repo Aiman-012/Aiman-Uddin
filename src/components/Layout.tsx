@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 import Footer from "./Footer";
 import CustomCursor from "./CustomCursor";
 import Chatbot from "./Chatbot";
+import BackToTop from "./BackToTop";
 import { ScrollRestoration } from "react-router-dom";
 
 export default function Layout() {
@@ -16,6 +17,7 @@ export default function Layout() {
       </main>
       <Footer />
       <Chatbot />
+      <BackToTop />
     </div>
   );
 }

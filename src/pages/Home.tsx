@@ -5,6 +5,7 @@ import { profileData } from "../data/profile";
 import WhatsAppForm from "../components/WhatsAppForm";
 import ExperienceSection from "../components/ExperienceSection";
 import ProjectsShowcase from "../components/ProjectsShowcase";
+import SEO from "../components/SEO";
 import { SiNextdotjs, SiReact, SiTypescript, SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiSupabase } from "react-icons/si";
 
 const skillIcons: Record<string, React.ReactNode> = {
@@ -23,6 +24,7 @@ export default function Home() {
 
   return (
     <div className="w-full">
+      <SEO title="Portfolio" description={data.bio} />
       {/* HERO SECTION */}
       <section className="max-w-7xl mx-auto px-6 pt-32 pb-40">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

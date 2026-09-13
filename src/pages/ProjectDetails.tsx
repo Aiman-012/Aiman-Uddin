@@ -4,6 +4,7 @@ import { fetchProjectBySlug } from "../data/cms";
 import { Project } from "../types";
 import { motion } from "motion/react";
 import { ArrowLeft } from "lucide-react";
+import SEO from "../components/SEO";
 
 export default function ProjectDetails() {
   const { slug } = useParams<{ slug: string }>();
@@ -23,6 +24,7 @@ export default function ProjectDetails() {
   if (loading) {
     return (
       <div className="min-h-[80vh] flex items-center justify-center">
+        <SEO title="Loading..." />
         <div className="w-6 h-6 border-2 border-neutral-900 dark:border-neutral-100 border-t-transparent dark:border-t-transparent rounded-full animate-spin" />
       </div>
     );
@@ -31,6 +33,7 @@ export default function ProjectDetails() {
   if (!project) {
     return (
       <div className="min-h-[80vh] flex flex-col items-center justify-center">
+        <SEO title="Project Not Found" />
         <h1 className="text-4xl font-bold mb-4">Project Not Found</h1>
         <Link to="/" className="text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 font-mono text-sm underline underline-offset-4">Return Home</Link>
       </div>
@@ -43,6 +46,7 @@ export default function ProjectDetails() {
       animate={{ opacity: 1 }}
       className="max-w-4xl mx-auto px-6 pt-24 pb-40"
     >
+      <SEO title={project.title} description={project.description} />
       <Link to="/" className="inline-flex items-center gap-2 text-sm font-mono text-neutral-500 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors mb-16">
         <ArrowLeft size={16} /> Back to Projects
       </Link>
