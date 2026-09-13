@@ -5,12 +5,13 @@ export function ThemeToggle() {
   const [isDark, setIsDark] = useState(true);
 
   useEffect(() => {
-    // Initial check
-    const root = document.documentElement;
-    if (root.classList.contains("dark")) {
-      setIsDark(true);
+    // Initial check - get from localStorage or DOM
+    const storedTheme = localStorage.getItem('theme');
+    if (storedTheme) {
+      setIsDark(storedTheme === 'dark');
     } else {
-      setIsDark(false);
+      const root = document.documentElement;
+      setIsDark(root.classList.contains("dark"));
     }
   }, []);
 
@@ -19,8 +20,10 @@ export function ThemeToggle() {
     setIsDark(next);
     if (next) {
       document.documentElement.classList.add("dark");
+      localStorage.setItem('theme', 'dark');
     } else {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem('theme', 'light');
     }
   };
 
