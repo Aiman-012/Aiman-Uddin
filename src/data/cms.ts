@@ -1,14 +1,14 @@
 import { CmsData } from "../types";
 
 export const cmsData: CmsData = {
-  projects: [
+   projects: [
     {
       id: "falcon-warriors",
       slug: "falcon-warriors",
       title: "FALCON WARRIORS",
       description: "High-impact esports and gaming platform featuring real-time team management and match scheduling.",
       longDescription: "A comprehensive web application designed for competitive gaming communities. FALCON WARRIORS features secure user authentication, robust team management, and real-time leaderboards wrapped in a responsive, esports-inspired modern UI.",
-      tags: ["Next.js", "TypeScript", "Tailwind", "MongoDB"],
+      tags: ["Next.js", "TypeScript", "Tailwind", "Supabase"],
       version: "v1.0.0",
       status: "LIVE",
       demoUrl: "https://falcon-warriors.vercel.app",
@@ -19,60 +19,67 @@ export const cmsData: CmsData = {
       ]
     },
     {
-      id: "1",
-      slug: "wavvy",
-      title: "Wavvy",
-      description: "Audio streaming & collaborative playlist curation platform with real-time waveform inspection.",
-      longDescription: "Wavvy is a cutting-edge platform designed for audiophiles. It supports lossless audio streaming and visualizes tracks in real-time, allowing DJs and curators to perfectly sync their playlists.",
-      tags: ["Next.js", "TypeScript", "Tailwind", "Web Audio API"],
-      version: "v1.4.0",
-      demoUrl: "#",
-      githubUrl: "#",
+      id: "l-or-sombre",
+      slug: "l-or-sombre",
+      title: "L'OR SOMBRE",
+      description: "Elegant dark-themed fashion & lifestyle showcase built with a premium, cinematic UI aesthetic.",
+      longDescription: "L'OR SOMBRE is a visually rich frontend experience crafted for a luxury brand feel — combining smooth animations, moody color palettes, and refined typography to create an immersive browsing experience.",
+      tags: ["React", "TypeScript", "Tailwind CSS"],
+      version: "v1.0.0",
+      status: "LIVE",
+      demoUrl: "https://l-or-sombre.vercel.app",
+      githubUrl: "https://github.com/Aiman03-del/L-OR-SOMBRE",
       stats: [
-        { label: "Web Audio Buffer", value: "48kHz / 24bit" }
+        { label: "Category", value: "Fashion / Lifestyle" },
+        { label: "Design", value: "Cinematic UI" }
       ]
     },
     {
-      id: "2",
-      slug: "parcel-ease",
-      title: "Parcel Ease",
-      description: "Modern courier tracking and logistics management dashboard designed for ultra-low latency queries.",
-      longDescription: "A fully custom logistics dashboard tailored for high-volume enterprise sorting centers. Handles thousands of concurrent socket connections for live tracking updates.",
-      tags: ["React", "Node.js", "Express", "MongoDB"],
-      status: "RT-SYNC",
-      demoUrl: "#",
-      githubUrl: "#",
+      id: "glowify",
+      slug: "glowify",
+      title: "Glowify",
+      description: "Modern skincare & beauty e-commerce interface with a clean, glow-focused product presentation.",
+      longDescription: "Glowify is a sleek storefront concept for a beauty and skincare brand, featuring product highlights, category browsing, and a bright, conversion-optimized UI layout.",
+      tags: ["React", "TypeScript", "Tailwind CSS"],
+      version: "v1.0.0",
+      status: "LIVE",
+      demoUrl: "https://glowify-phi.vercel.app",
+      githubUrl: "https://github.com/Aiman03-del/Glowify",
       stats: [
-        { label: "Route #9024", value: "Delivered: 99.4%" },
-        { label: "Nodes Verified", value: "2,410 active" }
+        { label: "Category", value: "E-commerce" },
+        { label: "Focus", value: "Beauty & Skincare" }
       ]
     },
     {
-      id: "3",
-      slug: "paws-elite",
-      title: "PawsElite",
-      description: "Boutique pet care booking and veterinary scheduling service with real-time calendar synchronization.",
-      longDescription: "Integrated with robust IAM and PostgreSQL row-level security to ensure absolute privacy for client veterinary records.",
-      tags: ["Next.js", "Supabase", "Tailwind CSS", "PostgreSQL"],
-      status: "CONFIRMED",
-      demoUrl: "#",
-      githubUrl: "#",
+      id: "healers",
+      slug: "healers",
+      title: "Healers",
+      description: "Healthcare-oriented platform connecting patients with medical support through a clean, trustworthy UI.",
+      longDescription: "Healers is a healthcare service concept focused on accessibility and trust, offering a structured layout for patient information, appointment flow, and medical service discovery.",
+      tags: ["React", "TypeScript", "Tailwind CSS"],
+      version: "v1.0.0",
+      status: "LIVE",
+      demoUrl: "https://healers1.netlify.app",
+      githubUrl: "https://github.com/Aiman03-del/Healers",
       stats: [
-        { label: "Auth Engine", value: "RLS Guarded" }
+        { label: "Category", value: "Healthcare" },
+        { label: "Hosting", value: "Netlify" }
       ]
     },
     {
-      id: "4",
-      slug: "lahn",
-      title: "Lahn",
-      description: "Minimalist markdown publishing tool and CMS tailored specifically for technical writers and developers.",
-      longDescription: "Built from the ground up prioritizing AST parsing speed over visual fluff. Easily compiles down to static HTML files with zero JavaScript overhead on the client.",
-      tags: ["React", "TypeScript", "Tailwind CSS", "Remark AST"],
-      version: "UTF-8",
-      demoUrl: "#",
-      githubUrl: "#",
+      id: "noir-expresso",
+      slug: "noir-expresso",
+      title: "Noir Expresso",
+      description: "Stylish coffee brand landing page with a dark, moody aesthetic and premium product showcase.",
+      longDescription: "Noir Expresso is a coffee shop / brand website concept designed with a rich dark theme, warm accent tones, and elegant typography to reflect a premium coffee experience.",
+      tags: ["React", "TypeScript", "Tailwind CSS"],
+      version: "v1.0.0",
+      status: "LIVE",
+      demoUrl: "https://noir-expresso.vercel.app",
+      githubUrl: "https://github.com/Aiman03-del/Noir-Expresso",
       stats: [
-        { label: "Bundle Size", value: "< 14kB Gzipped" }
+        { label: "Category", value: "Coffee / Brand" },
+        { label: "Design", value: "Dark Aesthetic" }
       ]
     }
   ],

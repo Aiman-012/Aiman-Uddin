@@ -14,7 +14,7 @@ export const profileData = {
       company: "Growthly IT (Client: AviHire)",
       companyUrl: "https://avihire.co",
       role: "Full-Stack / Frontend Engineering Intern",
-      duration: "2023 - Present",
+      duration: "2025 - Present",
       location: "Remote",
       description: "Contributed to the development of a specialized U.S.-based aviation recruitment platform connecting FAA-certified professionals with employers.",
       keyResponsibilities: [
