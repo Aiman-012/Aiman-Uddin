@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from "@vercel/node";
 import Groq from "groq-sdk";
-import { profileData } from "../src/data/profile";
+import { profileData } from "../src/data/profile.js";
 
 let groq: Groq | null = null;
 try {
