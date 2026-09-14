@@ -11,7 +11,7 @@ export const profileData = {
   experience: [
     {
       id: "avihire-internship",
-      company: "AviHire",
+      company: "Growthly IT (Client: AviHire)",
       companyUrl: "https://avihire.co",
       role: "Full-Stack / Frontend Engineering Intern",
       duration: "2023 - Present",
