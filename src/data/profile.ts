@@ -32,49 +32,49 @@ export const profileData = {
       category: "Web Application / Esports",
       shortDescription: "High-impact esports and gaming platform featuring real-time team management and match scheduling.",
       fullDescription: "A comprehensive web application designed for competitive gaming communities. FALCON WARRIORS features secure user authentication, robust team management, and real-time leaderboards wrapped in a responsive, esports-inspired modern UI.",
-      techStack: ["React/Next.js", "Tailwind CSS", "Node.js", "MongoDB", "TypeScript"],
+      techStack: ["React/Next.js", "Tailwind CSS", "TypeScript", "Supabase"],
       githubUrl: "https://github.com/Aiman03-del/FALCON-WARRIORS",
       demoUrl: "https://falcon-warriors.vercel.app"
     },
     {
-      id: "wavvy",
-      title: "Wavvy",
-      category: "Audio Streaming",
-      shortDescription: "Audio streaming & collaborative playlist curation platform with real-time waveform inspection.",
-      fullDescription: "Wavvy is a cutting-edge platform designed for audiophiles. It supports lossless audio streaming and visualizes tracks in real-time, allowing DJs and curators to perfectly sync their playlists.",
-      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "Web Audio API"],
-      githubUrl: "https://github.com/Aiman03-del/wavvy",
-      demoUrl: "https://wavvy.vercel.app"
+      id: "l-or-sombre",
+      title: "L'OR SOMBRE",
+      category: "Fashion / Lifestyle",
+      shortDescription: "Elegant dark-themed fashion & lifestyle showcase built with a premium, cinematic UI aesthetic.",
+      fullDescription: "L'OR SOMBRE is a visually rich frontend experience crafted for a luxury brand feel — combining smooth animations, moody color palettes, and refined typography to create an immersive browsing experience.",
+      techStack: ["React", "TypeScript", "Tailwind CSS"],
+      githubUrl: "https://github.com/Aiman03-del/L-OR-SOMBRE",
+      demoUrl: "https://l-or-sombre.vercel.app"
     },
     {
-      id: "parcel-ease",
-      title: "Parcel Ease",
-      category: "Logistics Dashboard",
-      shortDescription: "Modern courier tracking and logistics management dashboard designed for ultra-low latency queries.",
-      fullDescription: "A fully custom logistics dashboard tailored for high-volume enterprise sorting centers. Handles thousands of concurrent socket connections for live tracking updates.",
-      techStack: ["React", "Node.js", "Express", "MongoDB"],
-      githubUrl: "https://github.com/Aiman03-del/parcel-ease",
-      demoUrl: "https://parcel-ease.vercel.app"
+      id: "glowify",
+      title: "Glowify",
+      category: "E-commerce / Beauty",
+      shortDescription: "Modern skincare & beauty e-commerce interface with a clean, glow-focused product presentation.",
+      fullDescription: "Glowify is a sleek storefront concept for a beauty and skincare brand, featuring product highlights, category browsing, and a bright, conversion-optimized UI layout.",
+      techStack: ["React", "TypeScript", "Tailwind CSS"],
+      githubUrl: "https://github.com/Aiman03-del/Glowify",
+      demoUrl: "https://glowify-phi.vercel.app"
     },
     {
-      id: "pawselite",
-      title: "PawsElite",
-      category: "SaaS Booking Platform",
-      shortDescription: "Boutique pet care booking and veterinary scheduling service with real-time calendar synchronization.",
-      fullDescription: "Integrated with robust IAM and PostgreSQL row-level security to ensure absolute privacy for client veterinary records.",
-      techStack: ["Next.js", "Supabase", "Tailwind CSS", "PostgreSQL"],
-      githubUrl: "https://github.com/Aiman03-del/pawselite",
-      demoUrl: "https://pawselite.vercel.app"
+      id: "healers",
+      title: "Healers",
+      category: "Healthcare",
+      shortDescription: "Healthcare-oriented platform connecting patients with medical support through a clean, trustworthy UI.",
+      fullDescription: "Healers is a healthcare service concept focused on accessibility and trust, offering a structured layout for patient information, appointment flow, and medical service discovery.",
+      techStack: ["React", "TypeScript", "Tailwind CSS"],
+      githubUrl: "https://github.com/Aiman03-del/Healers",
+      demoUrl: "https://healers1.netlify.app"
     },
     {
-      id: "lahn",
-      title: "Lahn",
-      category: "Developer Tooling",
-      shortDescription: "Minimalist markdown publishing tool and CMS tailored specifically for technical writers and developers.",
-      fullDescription: "Built from the ground up prioritizing AST parsing speed over visual fluff. Easily compiles down to static HTML files with zero JavaScript overhead on the client.",
-      techStack: ["React", "TypeScript", "Tailwind CSS", "Remark AST"],
-      githubUrl: "https://github.com/Aiman03-del/lahn",
-      demoUrl: "https://lahn.vercel.app"
+      id: "noir-expresso",
+      title: "Noir Expresso",
+      category: "Coffee / Brand",
+      shortDescription: "Stylish coffee brand landing page with a dark, moody aesthetic and premium product showcase.",
+      fullDescription: "Noir Expresso is a coffee shop / brand website concept designed with a rich dark theme, warm accent tones, and elegant typography to reflect a premium coffee experience.",
+      techStack: ["React", "TypeScript", "Tailwind CSS"],
+      githubUrl: "https://github.com/Aiman03-del/Noir-Expresso",
+      demoUrl: "https://noir-expresso.vercel.app"
     }
   ],
   skills: {
