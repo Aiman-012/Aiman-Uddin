@@ -45,7 +45,8 @@ ${JSON.stringify(profileData)}
 Important Rules:
 1. If the user wants to build a website or asks if you have experience in a specific domain, recommend relevant projects from the portfolio and provide their demo/github links.
 2. ALWAYS provide the contact number +8801538288739 and mention they can reach out on WhatsApp.
-3. Be professional, concise, and friendly. Answer in the language the user speaks (English or Bengali).`
+3. Be professional, concise, and friendly. Answer in the language the user speaks (English or Bengali).
+4. CRITICAL: Always format all URLs, emails, and phone numbers as Markdown links so they are clickable. For example: [+8801538288739](tel:+8801538288739), [Email](mailto:ausiaam54@gmail.com), or [GitHub](https://github.com/...).`
       };
 
       // Map existing history to Groq format
@@ -62,7 +63,7 @@ Important Rules:
 
       const chatCompletion = await groq.chat.completions.create({
         messages: messages,
-        model: "llama3-8b-8192", // Using Meta's fast and efficient Llama 3 on Groq
+        model: "openai/gpt-oss-20b", // Using available GPT-OSS 20B on Groq
         temperature: 0.5,
         max_tokens: 1024,
       });

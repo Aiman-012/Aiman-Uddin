@@ -5,6 +5,7 @@ import CustomCursor from "./CustomCursor";
 import Chatbot from "./Chatbot";
 import BackToTop from "./BackToTop";
 import SEO from "./SEO";
+import ResumeModal from "./ResumeModal";
 import { ScrollRestoration } from "react-router-dom";
 
 export default function Layout() {
@@ -20,6 +21,7 @@ export default function Layout() {
       <Footer />
       <Chatbot />
       <BackToTop />
+      <ResumeModal />
     </div>
   );
 }

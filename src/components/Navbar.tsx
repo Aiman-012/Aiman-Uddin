@@ -29,6 +29,14 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
+          {import.meta.env.VITE_RESUME_URL && (
+            <button 
+              onClick={() => window.dispatchEvent(new Event('open-resume-modal'))}
+              className="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50 transition-colors cursor-pointer"
+            >
+              Resume
+            </button>
+          )}
         </nav>
 
         <div className="flex items-center gap-4">

@@ -2,6 +2,7 @@ import { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 
 interface ChatMessage {
   role: 'user' | 'model';
@@ -15,6 +16,7 @@ export default function Chatbot() {
   ]);
   const [input, setInput] = useState('');
   const [isLoading, setIsLoading] = useState(false);
+  const [isTyping, setIsTyping] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -29,7 +31,7 @@ export default function Chatbot() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!input.trim() || isLoading) return;
+    if (!input.trim() || isLoading || isTyping) return;
 
     const userMessage = input.trim();
     setInput('');
@@ -54,13 +56,48 @@ export default function Chatbot() {
       }
 
       const data = await response.json();
-      setMessages(prev => [...prev, { role: 'model', text: data.text }]);
+      const fullText = data.text;
+      
+      setIsLoading(false);
+      setIsTyping(true);
+      
+      setMessages(prev => [...prev, { role: 'model', text: '' }]);
+      
+      let currentIndex = 0;
+      const charsPerTick = 3; // Adjust this value to make typing faster or slower
+      
+      const interval = setInterval(() => {
+        currentIndex += charsPerTick;
+        
+        if (currentIndex >= fullText.length) {
+          currentIndex = fullText.length;
+          clearInterval(interval);
+          setIsTyping(false);
+        }
+        
+        setMessages(prev => {
+          const updated = [...prev];
+          updated[updated.length - 1] = { 
+            ...updated[updated.length - 1], 
+            text: fullText.slice(0, currentIndex) 
+          };
+          return updated;
+        });
+      }, 15);
+
     } catch (error) {
       console.error(error);
       setMessages(prev => [...prev, { role: 'model', text: "Sorry, I'm having trouble connecting right now. Please reach out via WhatsApp instead: +8801538288739" }]);
-    } finally {
       setIsLoading(false);
+      setIsTyping(false);
     }
+  };
+
+  const formatText = (text: string) => {
+    // If the text has raw phone numbers not in markdown format, convert them
+    // This is a simple regex that checks for +880... and wraps it in a markdown tel: link
+    let processed = text.replace(/(?<!\]\(tel:)(\+880\d{10})(?!\])/g, '[$1](tel:$1)');
+    return processed;
   };
 
   return (
@@ -130,7 +167,7 @@ export default function Chatbot() {
                       msg.text
                     ) : (
                       <div className="markdown-body prose dark:prose-invert prose-sm max-w-none prose-p:leading-relaxed prose-a:text-blue-500">
-                        <ReactMarkdown>{msg.text}</ReactMarkdown>
+                        <ReactMarkdown remarkPlugins={[remarkGfm]}>{formatText(msg.text)}</ReactMarkdown>
                       </div>
                     )}
                   </div>
@@ -163,7 +200,7 @@ export default function Chatbot() {
                 />
                 <button
                   type="submit"
-                  disabled={!input.trim() || isLoading}
+                  disabled={!input.trim() || isLoading || isTyping}
                   className="p-2.5 bg-neutral-900 dark:bg-white text-white dark:text-neutral-900 rounded-full hover:scale-105 transition-transform disabled:opacity-50 disabled:hover:scale-100 flex-shrink-0"
                 >
                   <Send size={16} />
