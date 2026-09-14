@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <div className="w-full">
-      <SEO title="Portfolio" description={data.bio} name="Aiman Uddin" />
+      <SEO title="Portfolio" description={data.personal.bio} name="Aiman Uddin" />
       {/* HERO SECTION */}
       <section className="max-w-7xl mx-auto px-6 pt-32 pb-40">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
