@@ -56,14 +56,15 @@ export default function ProjectsShowcase() {
               </div>
 
               <div className="flex items-center gap-6 border-t border-neutral-200 dark:border-neutral-800/50 pt-6 text-sm font-medium">
-                <a 
-                  href={project.demoUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
+                <button 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.dispatchEvent(new CustomEvent('open-demo-modal', { detail: { url: project.demoUrl, title: project.title } }));
+                  }}
                   className="flex items-center gap-1.5 text-neutral-600 dark:text-neutral-300 transition-colors hover:text-neutral-900 dark:hover:text-white"
                 >
                   Live Demo <ArrowUpRight size={16} />
-                </a>
+                </button>
                 <a 
                   href={project.githubUrl} 
                   target="_blank" 

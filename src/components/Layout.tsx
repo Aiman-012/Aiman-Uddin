@@ -6,6 +6,7 @@ import Chatbot from "./Chatbot";
 import BackToTop from "./BackToTop";
 import SEO from "./SEO";
 import ResumeModal from "./ResumeModal";
+import DemoModal from "./DemoModal";
 import { ScrollRestoration } from "react-router-dom";
 
 export default function Layout() {
@@ -22,6 +23,7 @@ export default function Layout() {
       <Chatbot />
       <BackToTop />
       <ResumeModal />
+      <DemoModal />
     </div>
   );
 }

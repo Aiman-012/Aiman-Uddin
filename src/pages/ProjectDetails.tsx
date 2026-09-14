@@ -84,7 +84,15 @@ export default function ProjectDetails() {
             <h3 className="text-xs font-mono tracking-widest text-neutral-500 uppercase mb-4">Links</h3>
             <div className="flex flex-col gap-3 font-mono text-sm">
               {project.demoUrl && (
-                <a href={project.demoUrl} className="hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors">Live Demo ↗</a>
+                <button 
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.dispatchEvent(new CustomEvent('open-demo-modal', { detail: { url: project.demoUrl, title: project.title } }));
+                  }}
+                  className="hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors text-left"
+                >
+                  Live Demo ↗
+                </button>
               )}
               {project.githubUrl && (
                 <a href={project.githubUrl} className="hover:text-neutral-600 dark:hover:text-neutral-300 transition-colors">GitHub Repository ↗</a>
