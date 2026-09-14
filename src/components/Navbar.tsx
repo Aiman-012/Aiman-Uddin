@@ -29,24 +29,18 @@ export default function Navbar() {
               {link.name}
             </a>
           ))}
-          {import.meta.env.VITE_RESUME_URL && (
-            <button 
-              onClick={() => window.dispatchEvent(new Event('open-resume-modal'))}
-              className="text-neutral-500 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-neutral-50 transition-colors cursor-pointer"
-            >
-              Resume
-            </button>
-          )}
         </nav>
 
         <div className="flex items-center gap-4">
           <ThemeToggle />
-          <a 
-            href="#contact"
-            className="hidden sm:inline-flex items-center justify-center border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 rounded-md px-4 py-2 text-xs font-mono tracking-wide text-neutral-900 dark:text-neutral-100 transition-colors"
-          >
-            Get in Touch
-          </a>
+          {import.meta.env.VITE_RESUME_URL && (
+            <button 
+              onClick={() => window.dispatchEvent(new Event('open-resume-modal'))}
+              className="hidden sm:inline-flex items-center justify-center border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 rounded-md px-4 py-2 text-xs font-mono tracking-wide text-neutral-900 dark:text-neutral-100 transition-colors cursor-pointer"
+            >
+              Resume
+            </button>
+          )}
         </div>
       </div>
     </header>

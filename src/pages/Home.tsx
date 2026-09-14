@@ -53,17 +53,9 @@ export default function Home() {
               >
                 View Work
               </a>
-              {import.meta.env.VITE_RESUME_URL && (
-                <button 
-                  onClick={() => window.dispatchEvent(new Event('open-resume-modal'))}
-                  className="px-8 py-3.5 rounded-md font-medium border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors"
-                >
-                  View Resume
-                </button>
-              )}
               <a 
                 href="#contact" 
-                className={`px-8 py-3.5 rounded-md font-medium transition-colors ${import.meta.env.VITE_RESUME_URL ? 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100' : 'border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600'}`}
+                className="px-8 py-3.5 rounded-md font-medium border border-neutral-200 dark:border-neutral-800 hover:border-neutral-400 dark:hover:border-neutral-600 transition-colors"
               >
                 Contact Me
               </a>
