@@ -24,7 +24,7 @@ export default function Home() {
 
   return (
     <div className="w-full">
-      <SEO title="Portfolio" description={data.bio} name="Aiman Siam" />
+      <SEO title="Portfolio" description={data.bio} name="Aiman Uddin" />
       {/* HERO SECTION */}
       <section className="max-w-7xl mx-auto px-6 pt-32 pb-40">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
@@ -73,7 +73,7 @@ export default function Home() {
              
              <img 
                src="/profile.png" 
-               alt="Aiman Siam" 
+               alt="Aiman Uddin" 
                className="relative z-10 w-full h-full object-contain object-bottom drop-shadow-2xl grayscale hover:grayscale-0 transition-all duration-700"
              />
 

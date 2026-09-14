@@ -15,7 +15,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 w-full bg-neutral-50/80 dark:bg-neutral-950/80 backdrop-blur-md border-b border-neutral-200/50 dark:border-neutral-800/50">
       <div className="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
         <Link to="/" className="flex flex-col">
-          <span className="font-display font-bold text-lg leading-none tracking-tight">Aiman Siam</span>
+          <span className="font-display font-bold text-lg leading-none tracking-tight">Aiman Uddin</span>
           <span className="font-mono text-[10px] text-neutral-500 tracking-widest uppercase mt-1">Full-Stack Dev</span>
         </Link>
 

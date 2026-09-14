@@ -10,7 +10,7 @@ import { ScrollRestoration } from "react-router-dom";
 export default function Layout() {
   return (
     <div className="min-h-screen flex flex-col selection:bg-neutral-300 dark:selection:bg-neutral-800">
-      <SEO title="Portfolio" name="Aiman Siam" />
+      <SEO title="Portfolio" name="Aiman Uddin" />
       <CustomCursor />
       <ScrollRestoration />
       <Navbar />

@@ -7,8 +7,8 @@ interface SEOProps {
   name?: string;
 }
 
-export default function SEO({ title, description, type = 'website', name = 'Aiman Siam' }: SEOProps) {
-  const metaDescription = description || "Aiman Uddin Siam's developer portfolio showcasing projects, skills, and experience.";
+export default function SEO({ title, description, type = 'website', name = 'Aiman Uddin' }: SEOProps) {
+  const metaDescription = description || "Aiman Uddin's developer portfolio showcasing projects, skills, and experience.";
   const fullTitle = `${title} | ${name}`;
 
   return (
