@@ -79,7 +79,7 @@ export default function Home() {
 
              <div className="absolute bottom-6 left-6 right-6 z-20 bg-white/70 dark:bg-black/70 backdrop-blur-md border border-neutral-200 dark:border-neutral-800 rounded-xl p-4 sm:p-6 flex justify-between items-center">
                 <div className="font-mono text-xs sm:text-sm font-bold tracking-wide">Aiman Uddin Siam</div>
-                <div className="font-mono text-[10px] text-neutral-500 uppercase tracking-widest text-right">SE & Architecture</div>
+                <div className="font-mono text-[10px] text-neutral-500 uppercase tracking-widest text-right">Full-Stack Developer</div>
              </div>
           </motion.div>
         </div>
