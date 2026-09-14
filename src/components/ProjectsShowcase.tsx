@@ -9,7 +9,13 @@ export default function ProjectsShowcase() {
   return (
     <section id="projects" className="py-32 bg-white dark:bg-[#0a0a0a] border-t border-neutral-200 dark:border-neutral-900">
       <div className="max-w-7xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20">
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-100px" }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-20"
+        >
           <div>
             <p className="font-mono text-xs text-neutral-500 tracking-widest uppercase mb-4">Portfolio</p>
             <h2 className="text-4xl sm:text-5xl font-bold">Featured Projects</h2>
@@ -17,16 +23,16 @@ export default function ProjectsShowcase() {
           <p className="text-neutral-600 dark:text-neutral-400 max-w-sm">
             Selected works, enterprise integrations, and high-performance applications.
           </p>
-        </div>
+        </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {projects.map((project, i) => (
             <motion.div 
               key={project.id}
-              initial={{ opacity: 0, y: 30 }}
+              initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: i * 0.1 }}
+              transition={{ duration: 0.8, delay: i * 0.15, ease: [0.22, 1, 0.36, 1] }}
               className="group relative flex flex-col rounded-2xl border border-neutral-200 dark:border-[#22242b] bg-neutral-50 dark:bg-[#0d0e12] p-8 transition-all hover:-translate-y-1 hover:border-neutral-400 dark:hover:border-[#383b46] hover:shadow-xl dark:hover:shadow-[0_8px_30px_rgb(0,0,0,0.5)]"
             >
               <div className="mb-6 flex items-center justify-between">

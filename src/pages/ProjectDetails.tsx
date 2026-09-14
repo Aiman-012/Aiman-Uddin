@@ -42,8 +42,9 @@ export default function ProjectDetails() {
 
   return (
     <motion.div 
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
       className="max-w-4xl mx-auto px-6 pt-24 pb-40"
     >
       <SEO title={project.title} description={project.description} name="Aiman Uddin" />
@@ -66,12 +67,24 @@ export default function ProjectDetails() {
       </p>
 
       {/* Visual Header Placeholder */}
-      <div className="w-full aspect-video rounded-2xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 mb-16 flex items-center justify-center relative overflow-hidden">
+      <motion.div 
+        initial={{ opacity: 0, scale: 0.95, y: 30 }}
+        whileInView={{ opacity: 1, scale: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
+        className="w-full aspect-video rounded-2xl bg-neutral-100 dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-800 mb-16 flex items-center justify-center relative overflow-hidden"
+      >
         <div className="absolute inset-0 opacity-20 dark:opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
         <span className="font-mono text-sm text-neutral-400 dark:text-neutral-600">Visual Assets Placeholder</span>
-      </div>
+      </motion.div>
 
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-neutral-200 dark:border-neutral-800 pt-16">
+      <motion.div 
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
+        className="grid grid-cols-1 md:grid-cols-3 gap-12 border-t border-neutral-200 dark:border-neutral-800 pt-16"
+      >
         <div className="md:col-span-2 prose prose-neutral dark:prose-invert">
           <h2 className="text-2xl font-bold mb-6">Overview</h2>
           <p className="text-neutral-600 dark:text-neutral-400 leading-relaxed">
@@ -114,7 +127,7 @@ export default function ProjectDetails() {
             </div>
           )}
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }
