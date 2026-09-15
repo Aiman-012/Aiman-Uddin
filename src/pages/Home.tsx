@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import { motion } from "motion/react";
+import { motion, AnimatePresence } from "motion/react";
 import { profileData } from "../data/profile";
 import WhatsAppForm from "../components/WhatsAppForm";
 import ExperienceSection from "../components/ExperienceSection";
+import TechMarquee from "../components/TechMarquee";
 import ProjectsShowcase from "../components/ProjectsShowcase";
 import SEO from "../components/SEO";
 import { SiNextdotjs, SiReact, SiTypescript, SiTailwindcss, SiNodedotjs, SiExpress, SiMongodb, SiSupabase } from "react-icons/si";
@@ -21,6 +22,15 @@ const skillIcons: Record<string, React.ReactNode> = {
 
 export default function Home() {
   const data = profileData;
+  const rotatingWords = ["Developer", "React Engineer", "Next.js Engineer", "Problem Solver"];
+  const [currentWord, setCurrentWord] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentWord((prev) => (prev + 1) % rotatingWords.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <div className="w-full">
@@ -42,9 +52,27 @@ export default function Home() {
             <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] mb-6">
               Full-Stack Developer crafting clean web solutions.
             </h1>
-            <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-10 max-w-lg leading-relaxed">
+            <p className="text-lg text-neutral-600 dark:text-neutral-400 mb-6 max-w-lg leading-relaxed">
               I build robust, scalable, and human-centric web applications specializing in React, Next.js, TypeScript, and Node.js.
             </p>
+
+            <div className="font-mono text-sm text-neutral-500 mb-10 h-6 flex items-center overflow-hidden relative">
+              <span className="mr-2 shrink-0">Full-Stack</span>
+              <div className="relative flex-1 h-full w-[200px]">
+                <AnimatePresence mode="popLayout">
+                  <motion.span
+                    key={currentWord}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.5, ease: "easeInOut" }}
+                    className="absolute inset-0 flex items-center whitespace-nowrap text-neutral-900 dark:text-neutral-100 font-medium"
+                  >
+                    {rotatingWords[currentWord]}
+                  </motion.span>
+                </AnimatePresence>
+              </div>
+            </div>
             
             <div className="flex flex-wrap items-center gap-4">
               <a 
@@ -69,8 +97,28 @@ export default function Home() {
             transition={{ duration: 1, ease: [0.22, 1, 0.36, 1], delay: 0.2 }}
             className="w-full aspect-[4/3] lg:aspect-square bg-neutral-200/50 dark:bg-neutral-800/50 rounded-2xl relative overflow-hidden flex items-end justify-center pt-12 px-8 lg:pt-16 lg:px-12 border border-neutral-200 dark:border-neutral-800"
           >
-             <div className="absolute inset-0 opacity-20 dark:opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)', backgroundSize: '24px 24px' }}></div>
+             <motion.div 
+               className="absolute inset-0 opacity-20 dark:opacity-10" 
+               style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, currentColor 1px, transparent 0)', backgroundSize: '24px 24px' }}
+               animate={{ backgroundPosition: ["0px 0px", "24px 24px"] }}
+               transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+             ></motion.div>
              
+             {/* Ambient Blur Blob */}
+             <motion.div 
+               animate={{ 
+                 x: [0, 40, -40, 0],
+                 y: [0, -40, 40, 0],
+               }}
+               transition={{ 
+                 duration: 10,
+                 repeat: Infinity,
+                 repeatType: "mirror",
+                 ease: "easeInOut"
+               }}
+               className="absolute w-2/3 h-2/3 bg-neutral-300/20 dark:bg-neutral-700/20 rounded-full blur-3xl z-0"
+             />
+
              <img 
                src="/profile.png" 
                alt="Aiman Uddin" 
@@ -86,6 +134,8 @@ export default function Home() {
       </section>
       
       <ExperienceSection />
+      
+      <TechMarquee />
       
       <ProjectsShowcase />
 
@@ -113,9 +163,23 @@ export default function Home() {
               <motion.div
                 key={category}
                 initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: [30, 0, 0, -6, 0] }}
                 viewport={{ once: true, margin: "-50px" }}
-                transition={{ duration: 0.8, delay: i * 0.1, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ 
+                  y: {
+                    times: [0, 0.2, 1], // Entrance happens early, then begins float
+                    duration: 3 + (i * 0.2), // Vary the duration per card slightly
+                    repeat: Infinity,
+                    repeatType: "mirror",
+                    ease: "easeInOut",
+                    delay: i * 0.1
+                  },
+                  opacity: {
+                    duration: 0.8,
+                    delay: i * 0.1,
+                    ease: [0.22, 1, 0.36, 1]
+                  }
+                }}
                 className="group p-6 border border-neutral-200 dark:border-neutral-800 rounded-xl bg-neutral-50 dark:bg-neutral-950 flex flex-col hover:border-neutral-300 dark:hover:border-neutral-700 transition-colors"
               >
                 <h3 className="text-sm font-mono tracking-widest text-neutral-500 uppercase mb-6">{category}</h3>
