@@ -26,8 +26,8 @@ export default function Home() {
     <div className="w-full">
       <SEO title="Portfolio" description={data.personal.bio} name="Aiman Uddin" />
       {/* HERO SECTION */}
-      <section className="max-w-7xl mx-auto px-6 pt-32 pb-40">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+      <section className="max-w-7xl mx-auto px-6 pt-20 pb-24 md:pt-32 md:pb-40">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
@@ -90,7 +90,7 @@ export default function Home() {
       <ProjectsShowcase />
 
       {/* SKILLS SECTION */}
-      <section id="skills" className="py-32 border-t border-neutral-200 dark:border-neutral-900">
+      <section id="skills" className="py-20 md:py-32 border-t border-neutral-200 dark:border-neutral-900">
         <div className="max-w-7xl mx-auto px-6">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
@@ -136,8 +136,8 @@ export default function Home() {
       </section>
 
       {/* CONTACT SECTION */}
-      <section id="contact" className="py-32 bg-white dark:bg-[#0a0a0a] border-t border-neutral-200 dark:border-neutral-900">
-        <div className="max-w-7xl mx-auto px-6">
+      <section id="contact" className="py-20 md:py-32 bg-white dark:bg-[#0a0a0a] border-t border-neutral-200 dark:border-neutral-900">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6">
           <motion.div 
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}

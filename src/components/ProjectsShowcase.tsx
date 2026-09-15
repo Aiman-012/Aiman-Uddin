@@ -7,7 +7,7 @@ export default function ProjectsShowcase() {
   const projects = profileData.projects;
 
   return (
-    <section id="projects" className="py-32 bg-white dark:bg-[#0a0a0a] border-t border-neutral-200 dark:border-neutral-900">
+    <section id="projects" className="py-20 md:py-32 bg-white dark:bg-[#0a0a0a] border-t border-neutral-200 dark:border-neutral-900">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}

@@ -6,7 +6,7 @@ export default function ExperienceSection() {
   const experiences = profileData.experience;
 
   return (
-    <section id="experience" className="py-32 border-t border-neutral-200 dark:border-neutral-900">
+    <section id="experience" className="py-20 md:py-32 border-t border-neutral-200 dark:border-neutral-900">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
