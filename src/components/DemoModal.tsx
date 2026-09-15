@@ -1,12 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ExternalLink, Loader2 } from 'lucide-react';
+import { X, ExternalLink, Loader2, RefreshCw } from 'lucide-react';
 
 export default function DemoModal() {
   const [isOpen, setIsOpen] = useState(false);
   const [demoUrl, setDemoUrl] = useState('');
   const [title, setTitle] = useState('');
   const [isLoading, setIsLoading] = useState(true);
+  const [reloadKey, setReloadKey] = useState(0);
 
   useEffect(() => {
     const handleOpen = (e: Event) => {
@@ -14,6 +15,7 @@ export default function DemoModal() {
       setDemoUrl(customEvent.detail.url);
       setTitle(customEvent.detail.title || 'Live Demo');
       setIsLoading(true);
+      setReloadKey(prev => prev + 1);
       setIsOpen(true);
     };
     window.addEventListener('open-demo-modal', handleOpen);
@@ -38,6 +40,11 @@ export default function DemoModal() {
       setDemoUrl('');
     }, 300); // clear after animation
   }
+
+  const handleReload = () => {
+    setIsLoading(true);
+    setReloadKey(prev => prev + 1);
+  };
 
   return (
     <AnimatePresence>
@@ -67,6 +74,13 @@ export default function DemoModal() {
                 </div>
               </div>
               <div className="flex items-center gap-2">
+                <button 
+                  onClick={handleReload}
+                  title="Reload Preview"
+                  className="hidden sm:flex items-center justify-center p-2 px-3 text-sm font-medium text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white transition-colors bg-neutral-200/50 dark:bg-neutral-800/50 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800"
+                >
+                  <RefreshCw size={14} className={isLoading ? "animate-spin" : ""} />
+                </button>
                 <a 
                   href={demoUrl} 
                   target="_blank" 
@@ -113,6 +127,7 @@ export default function DemoModal() {
               
               {demoUrl && (
                 <iframe 
+                  key={reloadKey}
                   src={demoUrl}
                   onLoad={() => setIsLoading(false)}
                   className="w-full h-full border-0"
