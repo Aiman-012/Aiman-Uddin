@@ -4,7 +4,7 @@ import { profileData } from "../data/profile";
 import { Link } from "react-router-dom";
 
 export default function ProjectsShowcase() {
-  const projects = profileData.projects;
+  const projects = profileData.projects.filter(p => p.featured);
 
   return (
     <section id="projects" className="py-20 md:py-32 bg-white dark:bg-[#0a0a0a] border-t border-neutral-200 dark:border-neutral-900">
@@ -20,12 +20,12 @@ export default function ProjectsShowcase() {
             <p className="font-mono text-xs text-neutral-500 tracking-widest uppercase mb-4">Portfolio</p>
             <h2 className="text-4xl sm:text-5xl font-bold">Featured Projects</h2>
           </div>
-          <p className="text-neutral-600 dark:text-neutral-400 max-w-sm">
+          <p className="text-neutral-600 dark:text-neutral-400 max-w-sm md:text-right">
             Selected works, enterprise integrations, and high-performance applications.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-16">
           {projects.map((project, i) => (
             <motion.div 
               key={project.id}
@@ -71,18 +71,36 @@ export default function ProjectsShowcase() {
                 >
                   Live Demo <ArrowUpRight size={16} />
                 </button>
-                <a 
-                  href={project.githubUrl} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-1.5 text-neutral-500 transition-colors hover:text-neutral-900 dark:hover:text-white"
-                >
-                  <Github size={16} /> GitHub
-                </a>
+                {project.githubUrl && (
+                  <a 
+                    href={project.githubUrl} 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-1.5 text-neutral-500 transition-colors hover:text-neutral-900 dark:hover:text-white"
+                  >
+                    <Github size={16} /> GitHub
+                  </a>
+                )}
               </div>
             </motion.div>
           ))}
         </div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          className="flex justify-center"
+        >
+          <Link 
+            to="/projects"
+            className="group inline-flex items-center justify-center gap-2 px-6 py-3 rounded-full border border-neutral-200 dark:border-neutral-800 bg-neutral-50 dark:bg-[#0d0e12] hover:bg-neutral-100 dark:hover:bg-neutral-900 text-sm font-medium transition-all hover:scale-105"
+          >
+            View All Projects
+            <ArrowUpRight size={16} className="text-neutral-400 group-hover:text-neutral-900 dark:group-hover:text-white transition-colors" />
+          </Link>
+        </motion.div>
       </div>
     </section>
   );

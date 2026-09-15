@@ -3,6 +3,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Layout from "./components/Layout";
 import Home from "./pages/Home";
 import ProjectDetails from "./pages/ProjectDetails";
+import AllProjects from "./pages/AllProjects";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: "projects",
+        element: <AllProjects />,
       },
       {
         path: "projects/:slug",

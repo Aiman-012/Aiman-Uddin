@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, ExternalLink, Loader2, RefreshCw } from 'lucide-react';
+import { X, ExternalLink, Loader2, RefreshCw, Link, Check } from 'lucide-react';
 
 export default function DemoModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,6 +8,7 @@ export default function DemoModal() {
   const [title, setTitle] = useState('');
   const [isLoading, setIsLoading] = useState(true);
   const [reloadKey, setReloadKey] = useState(0);
+  const [isCopied, setIsCopied] = useState(false);
 
   useEffect(() => {
     const handleOpen = (e: Event) => {
@@ -17,6 +18,7 @@ export default function DemoModal() {
       setIsLoading(true);
       setReloadKey(prev => prev + 1);
       setIsOpen(true);
+      setIsCopied(false);
     };
     window.addEventListener('open-demo-modal', handleOpen);
     return () => window.removeEventListener('open-demo-modal', handleOpen);
@@ -44,6 +46,12 @@ export default function DemoModal() {
   const handleReload = () => {
     setIsLoading(true);
     setReloadKey(prev => prev + 1);
+  };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(demoUrl);
+    setIsCopied(true);
+    setTimeout(() => setIsCopied(false), 2000);
   };
 
   return (
@@ -80,6 +88,13 @@ export default function DemoModal() {
                   className="hidden sm:flex items-center justify-center p-2 px-3 text-sm font-medium text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white transition-colors bg-neutral-200/50 dark:bg-neutral-800/50 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800"
                 >
                   <RefreshCw size={14} className={isLoading ? "animate-spin" : ""} />
+                </button>
+                <button 
+                  onClick={handleCopy}
+                  title="Copy Link"
+                  className="hidden sm:flex items-center justify-center p-2 px-3 text-sm font-medium text-neutral-600 hover:text-neutral-900 dark:text-neutral-400 dark:hover:text-white transition-colors bg-neutral-200/50 dark:bg-neutral-800/50 rounded-full hover:bg-neutral-200 dark:hover:bg-neutral-800 w-[42px]"
+                >
+                  {isCopied ? <Check size={14} className="text-emerald-500" /> : <Link size={14} />}
                 </button>
                 <a 
                   href={demoUrl} 

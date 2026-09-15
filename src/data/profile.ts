@@ -27,6 +27,16 @@ export const profileData = {
   ],
   projects: [
     {
+      id: "avihire",
+      title: "AviHire",
+      category: "Recruitment / Aviation",
+      shortDescription: "Specialized U.S.-based aviation recruitment platform connecting FAA-certified professionals with employers.",
+      fullDescription: "A comprehensive recruitment platform built for the aviation industry. Features include a dynamic job board, an employer ATS (Applicant Tracking System) dashboard, real-time applicant tracking, direct messaging, and secure FAA certification verification workflows.",
+      techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Node.js"],
+      demoUrl: "https://avihire.co",
+      featured: true
+    },
+    {
       id: "falcon-warriors",
       title: "FALCON WARRIORS",
       category: "Web Application / Esports",
@@ -34,7 +44,8 @@ export const profileData = {
       fullDescription: "A comprehensive web application designed for competitive gaming communities. FALCON WARRIORS features secure user authentication, robust team management, and real-time leaderboards wrapped in a responsive, esports-inspired modern UI.",
       techStack: ["React/Next.js", "Tailwind CSS", "TypeScript", "Supabase"],
       githubUrl: "https://github.com/Aiman03-del/FALCON-WARRIORS",
-      demoUrl: "https://falcon-warriors.vercel.app"
+      demoUrl: "https://falcon-warriors.vercel.app",
+      featured: true
     },
     {
       id: "l-or-sombre",
@@ -44,7 +55,8 @@ export const profileData = {
       fullDescription: "L'OR SOMBRE is a visually rich frontend experience crafted for a luxury brand feel — combining smooth animations, moody color palettes, and refined typography to create an immersive browsing experience.",
       techStack: ["React", "TypeScript", "Tailwind CSS"],
       githubUrl: "https://github.com/Aiman03-del/L-OR-SOMBRE",
-      demoUrl: "https://l-or-sombre.vercel.app"
+      demoUrl: "https://l-or-sombre.vercel.app",
+      featured: true
     },
     {
       id: "glowify",
@@ -54,7 +66,8 @@ export const profileData = {
       fullDescription: "Glowify is a sleek storefront concept for a beauty and skincare brand, featuring product highlights, category browsing, and a bright, conversion-optimized UI layout.",
       techStack: ["React", "TypeScript", "Tailwind CSS"],
       githubUrl: "https://github.com/Aiman03-del/Glowify",
-      demoUrl: "https://glowify-phi.vercel.app"
+      demoUrl: "https://glowify-phi.vercel.app",
+      featured: true
     },
     {
       id: "healers",
@@ -64,7 +77,8 @@ export const profileData = {
       fullDescription: "Healers is a healthcare service concept focused on accessibility and trust, offering a structured layout for patient information, appointment flow, and medical service discovery.",
       techStack: ["React", "TypeScript", "Tailwind CSS"],
       githubUrl: "https://github.com/Aiman03-del/Healers",
-      demoUrl: "https://healers1.netlify.app"
+      demoUrl: "https://healers1.netlify.app",
+      featured: false
     },
     {
       id: "noir-expresso",
@@ -74,7 +88,8 @@ export const profileData = {
       fullDescription: "Noir Expresso is a coffee shop / brand website concept designed with a rich dark theme, warm accent tones, and elegant typography to reflect a premium coffee experience.",
       techStack: ["React", "TypeScript", "Tailwind CSS"],
       githubUrl: "https://github.com/Aiman03-del/Noir-Expresso",
-      demoUrl: "https://noir-expresso.vercel.app"
+      demoUrl: "https://noir-expresso.vercel.app",
+      featured: false
     }
   ],
   skills: {
