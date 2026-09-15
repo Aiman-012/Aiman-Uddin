@@ -167,8 +167,8 @@ export default function Home() {
                 viewport={{ once: true, margin: "-50px" }}
                 transition={{ 
                   y: {
-                    times: [0, 0.2, 1], // Entrance happens early, then begins float
-                    duration: 3 + (i * 0.2), // Vary the duration per card slightly
+                    times: [0, 0.2, 0.25, 0.6, 1], // Exactly 5 values to match the 5 y keyframes
+                    duration: 3 + (i * 0.2), 
                     repeat: Infinity,
                     repeatType: "mirror",
                     ease: "easeInOut",
