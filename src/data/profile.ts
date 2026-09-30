@@ -37,6 +37,16 @@ export const profileData = {
       featured: true
     },
     {
+      id: "resumly",
+      title: "Resumly",
+      category: "AI Tool / Career",
+      shortDescription: "AI-powered resume builder with live template preview, one-click recoloring, and smart content generation.",
+      fullDescription: "Resumly is a modern resume builder that helps users create polished resumes quickly. AI generates the professional summary and project descriptions from the user's role, experience, and projects, with or without a project link, and each project can hold multiple links. The template page uses a split view: a template list on the left, a live resume preview on the right, and a color palette on top to recolor the entire resume instantly.",
+      techStack: ["Next.js", "TypeScript", "Tailwind CSS", "shadcn/ui"],
+      githubUrl: "https://github.com/Aiman03-del/resumly",
+      featured: true
+    },
+    {
       id: "falcon-warriors",
       title: "FALCON WARRIORS",
       category: "Web Application / Esports",
