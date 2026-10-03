@@ -37,6 +37,17 @@ export const profileData = {
       featured: true
     },
     {
+      id: "brainiacs",
+      title: "Brainiacs",
+      category: "Team Collaboration / SaaS",
+      shortDescription: "Team collaboration workspace that brings board-based conversations, Kanban tasks, and AI assistance into one place.",
+      fullDescription: "Brainiacs is a modern collaboration workspace for team communication, task management, and AI assistance. Each board is a collaboration unit with its own Kanban view and a channel for team conversation. The app also includes an activity feed, workspace search, a leaderboard, and an AI assistant to help brainstorm, draft, and break big tasks into steps. It features authentication with early route-level redirects for the protected dashboard, plus public pages for About, Pricing, and FAQ.",
+      techStack: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Vitest"],
+      githubUrl: "https://github.com/Aiman03-del/Brainiacs-next",
+      demoUrl: "https://brainiacs-next.vercel.app",
+      featured: true
+    },
+    {
       id: "resumly",
       title: "Resumly",
       category: "AI Tool / Career",
